@@ -4,4 +4,36 @@
             <version>0.1.0</version>
         </Magentotutorial_Helloworld>
     </modules>
+
+    <global>
+        <models>
+            <helloworld>
+                <class>Magentotutorial_Helloworld_Model</class>
+                <resourceModel>helloworld_resource</resourceModel>
+            </helloworld>
+            <helloworld_resource>
+                <class>Magentotutorial_Helloworld_Model_Resource</class>
+                <entities>
+                    <blog>
+                        <table>blog</table>
+                    </blog>
+                    <blogpost>
+                        <table>blog_posts</table>
+                    </blogpost>
+                </entities>
+            </helloworld_resource>
+        </models>
+    </global>
+
+    <frontend>
+        <routers>
+            <helloworld>
+                <use>standard</use>
+                <args>
+                    <module>Magentotutorial_Helloworld</module>
+                    <frontName>helloworld</frontName>
+                </args>
+            </helloworld>
+        </routers>
+    </frontend>
 </config>

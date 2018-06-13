@@ -24,4 +24,29 @@ class Magentotutorial_Helloworld_IndexController extends Mage_Core_Controller_Fr
         }
         echo '';
     }
+
+    public function getModelAction(){
+        $params = $this->getRequest()->getParams();
+        $blogpost = Mage::getModel('helloworld/blog');
+        $blogpost->load('1');
+        $data = $blogpost->getData('title');
+        $dataOri = $blogpost->getOrigData('title');
+        $blogpost->setTitle('改名字了');
+        $blogpost->save();
+        var_dump($dataOri);
+        var_dump($blogpost->getBlogId());
+        echo '<br><br>';
+
+        $test = Mage::getModel('helloworld/testpost');
+        $test->load('1');
+        $data1 = $test->getData('title');
+        var_dump($data1);
+    }
+
+    public function getCollectionAction(){
+        $blog = Mage::getModel('helloworld/blog')->getCollection();
+        foreach($blog as $value){
+            echo $value->getTitle().'<br>';
+        }
+    }
 }
