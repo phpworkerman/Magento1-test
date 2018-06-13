@@ -49,4 +49,10 @@ class Magentotutorial_Helloworld_IndexController extends Mage_Core_Controller_Fr
             echo $value->getTitle().'<br>';
         }
     }
+
+    public function getEavModelAction(){
+        $eavblog = Mage::getModel('helloworld/eavblog');
+        $eavblog->load('1');
+        var_dump($eavblog);
+    }
 }

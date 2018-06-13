@@ -20,9 +20,21 @@
                     <blogpost>
                         <table>blog_posts</table>
                     </blogpost>
+                    <eavblog>
+                        <table>eav_blog</table>
+                    </eavblog>
                 </entities>
             </helloworld_resource>
         </models>
+
+        <resources>
+            <helloworld_setup>
+                <setup>
+                    <module>Magentotutorial_Helloworld</module>
+                    <class>Magentotutorial_Helloworld_Model_Resource_Setup</class>
+                </setup>
+            </helloworld_setup>
+        </resources>
     </global>
 
     <frontend>
